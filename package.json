@@ -20,6 +20,7 @@
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^6.10.3",
+    "ncp": "^2.0.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^1.14.1"
@@ -27,7 +28,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --production --optimize-minimize",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "copy-files": "ncp index.html dist/index.html"
   },
   "keywords": [
     "react"
