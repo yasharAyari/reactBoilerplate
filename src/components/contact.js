@@ -24,7 +24,7 @@ const counterReducer = (state = 0, action) => {
     default: 
       return state;
   }
-}
+};
 
 
 /**
@@ -39,6 +39,13 @@ const Counter = (props) => (
     <button onClick={props.reset}>reset</button>
   </div>
 );
+
+Counter.propTypes = {
+  value: React.PropTypes.number,
+  increase: React.PropTypes.function,
+  decrease: React.PropTypes.function,
+  reset: React.PropTypes.function
+};
 
 
 const Contact = () =>(
@@ -67,10 +74,10 @@ const mapDispatchToProps = (dispatch) => {
     reset: () => {
       dispatch({
         type: 'RESET'
-      })
+      });
     }
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => ({ value: state });
 

@@ -3,7 +3,7 @@
 */
 
 import React from 'react';
-import css from '../css/style.css';
+import '../css/style.css';
 import axios from 'axios';
 
 class About extends React.Component{
@@ -11,7 +11,7 @@ class About extends React.Component{
         super();
         this.state = {
             title: 'loading...'
-        }
+        };
     }
     componentDidMount(){
         axios.get('/src/fakeApi/about.json')
@@ -19,11 +19,11 @@ class About extends React.Component{
                 this.setState({
                     title: response.data.title,
                     desc: response.data.description
-                })
+                });
             })
             .catch((error) => {
                 console.log(error);
-            })
+            });
     }
     render() {
         return (
