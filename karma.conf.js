@@ -1,5 +1,5 @@
 // Karma configuration
-const webpackEnv = {test: true};
+const webpackEnv = { test: true };
 const webpackConfig = require('./webpack.config')(webpackEnv);
 const fileGlob = 'src/**/*.test.js';
 module.exports = function(config) {
@@ -15,16 +15,17 @@ module.exports = function(config) {
     reporters: ['progress', 'coverage'],
     coverageReporter: {
       reporters: [
-        {type: 'text-summary'}
+        { type: 'text-summary' }
       ]
     },
     webpack: webpackConfig,
+    webpackMiddleware: { noInfo: true },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
     browsers: ['Chrome'],
-    singleRun: true  ,
+    singleRun: true,
     concurrency: Infinity
   })
 }

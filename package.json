@@ -43,7 +43,7 @@
     "test": "karma start",
     "watch:test": "npm test -- --auto-watch --no-single-run",
     "analyze-bundles": "webpack --env.analyze",
-    "build": "webpack --env.prod -p",
+    "build": "npm clean && webpack --env.prod -p",
     "start": "webpack-dev-server --env.dev",
     "copy-files": "cpy src/index.html dist",
     "clean": "del dist -f"
