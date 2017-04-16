@@ -13,23 +13,40 @@
   },
   "devDependencies": {
     "babel-core": "^6.20.0",
-    "babel-loader": "^6.2.9",
+    "babel-loader": "^7.0.0-beta.1",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.6.1",
+    "cpy-cli": "^1.0.1",
     "css-loader": "^0.28.0",
+    "del-cli": "^0.2.1",
+    "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^6.10.3",
+    "karma": "^1.6.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "karma-webpack": "^2.0.3",
+    "mocha": "^3.2.0",
     "ncp": "^2.0.0",
+    "react-addons-test-utils": "^15.5.1",
     "style-loader": "^0.16.1",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-bundle-analyzer": "^2.4.0",
+    "webpack-dev-server": "^2.4.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --production --optimize-minimize",
-    "start": "webpack-dev-server",
-    "copy-files": "ncp index.html dist/index.html"
+    "test": "karma start",
+    "watch:test": "npm test -- --auto-watch --no-single-run",
+    "analyze-bundles": "webpack --env.analyze",
+    "build": "webpack --env.prod -p",
+    "start": "webpack-dev-server --env.dev",
+    "copy-files": "cpy src/index.html dist",
+    "clean": "del dist -f"
   },
   "keywords": [
     "react"

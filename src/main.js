@@ -2,8 +2,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Contact from '../components/contact';
-import About from '../components/about';
+import Contact from './components/contact';
+import About from './components/about';
 
 class App extends React.Component {
     render() {

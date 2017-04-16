@@ -42,9 +42,9 @@ const Counter = (props) => (
 
 Counter.propTypes = {
   value: React.PropTypes.number,
-  increase: React.PropTypes.function,
-  decrease: React.PropTypes.function,
-  reset: React.PropTypes.function
+  increase: React.PropTypes.func,
+  decrease: React.PropTypes.func,
+  reset: React.PropTypes.func
 };
 
 
