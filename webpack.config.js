@@ -1,18 +1,30 @@
 var path = require("path");
+var webpack = require('webpack');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = env => {
     return {
-        entry: path.resolve(__dirname, "src")+'/js/main.js',
+        entry: {
+            app: path.resolve(__dirname, "src")+'/main.js',
+            vendor: ['react', 'redux', 'react-dom']
+        },
         output: {
-            path: './',
-            filename: './js/bundle.js'
+            path: path.resolve(__dirname, "dist"),
+            filename: 'bundle.[name].js'
         },
         devServer: {
-            path: path.resolve(__dirname, "src"),
+            contentBase: "src",
             inline: true,
             port: 3000,
             historyApiFallback: true,
         },
+        plugins: [
+            env.analyze ? new BundleAnalyzerPlugin() : undefined,
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor'
+            })
+        ].filter((p) => !!p),
+
         module: {
             rules: [
                 {
@@ -29,16 +41,6 @@ module.exports = env => {
                         presets: ['es2015', 'react']
                     }
                 },
-                    // use: [
-                    //     {
-                            
-                    //     },
-                    //     {
-                            
-                    //     }
-                        
-                    // ]
-                //},
                 {
                     test: /\.css$/,
                     use: [ 'style-loader', 'css-loader' ]

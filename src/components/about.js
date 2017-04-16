@@ -1,7 +1,7 @@
 /**
 * this is a simple example of axios a React application to connect to an Api
 */
-
+/* global console */
 import React from 'react';
 import '../css/style.css';
 import axios from 'axios';
@@ -14,7 +14,7 @@ class About extends React.Component{
         };
     }
     componentDidMount(){
-        axios.get('/src/fakeApi/about.json')
+        axios.get('/fakeApi/about.json')
             .then((response) => {
                 this.setState({
                     title: response.data.title,
@@ -34,6 +34,5 @@ class About extends React.Component{
         );
     }
 }
-
 
 export default About;
