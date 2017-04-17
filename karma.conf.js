@@ -19,7 +19,14 @@ module.exports = function(config) {
       ]
     },
     webpack: webpackConfig,
-    webpackMiddleware: { noInfo: true },
+    webpackMiddleware: {
+      noInfo: true,
+      // and use stats to turn off verbose output
+      stats: {
+        // options i.e. 
+        chunks: false
+      }
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

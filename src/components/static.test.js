@@ -1,6 +1,6 @@
 import Static from './static';
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 describe('<Static />', () => {
   it('allows us to set props', () => {
