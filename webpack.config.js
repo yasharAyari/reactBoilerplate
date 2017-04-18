@@ -26,7 +26,10 @@ module.exports = env => {
         name: 'vendor'
       })
     ].filter((p) => !!p),
-
+    externals: {
+      'react/lib/ExecutionEnvironment': true,
+      'react/lib/ReactContext': true
+    },
     module: {
       rules: [{
           enforce: "pre",
