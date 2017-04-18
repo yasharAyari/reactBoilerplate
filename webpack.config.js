@@ -27,6 +27,10 @@ module.exports = env => {
       })
     ].filter((p) => !!p),
     externals: {
+<<<<<<< HEAD
+=======
+      'react/addons': true,
+>>>>>>> c0590a8da9d3d61bc8e2da15efb47b2fe499a99b
       'react/lib/ExecutionEnvironment': true,
       'react/lib/ReactContext': true
     },
